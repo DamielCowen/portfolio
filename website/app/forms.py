@@ -27,8 +27,6 @@ class RegistrationForm(FlaskForm):
         user = User.query.filter_by(email=email.data).first()
         if user is not None:
             raise ValidationError('Please use a different email')
-    def validate_password(self, password):
-        if len(password.data) <=7:
             raise ValidationError('Please use a longer password')
         
 class EditProfileForm(FlaskForm):

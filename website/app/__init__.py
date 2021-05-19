@@ -14,6 +14,7 @@ migrate = Migrate(app, db)
 login = LoginManager(app)
 login.login_view ='login'
 
+print("*"*25,"Top")
 if not app.debug:
     #log errors to email
     # but gmail does not accept trafic from less secure applications
@@ -45,3 +46,4 @@ if not app.debug:
     app.logger.info('Microblog startup')
 
 from app import routes, models, errors
+print("*"*25,"Bot")
